@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import './styles/global.css'; 
 import LandingPage from "./pages/LandingPage";
 import UserLogin from "./pages/UserLogin";
 import Register from "./pages/Register";

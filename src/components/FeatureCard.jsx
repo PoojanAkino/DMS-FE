@@ -1,146 +1,109 @@
 // src/components/FeatureCards.jsx
 import React from "react";
+import styles from './FeatureCard.module.css';
 
 export default function FeatureCards() {
   const features = [
     {
-      icon: "👥",
+      icon: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <circle cx="12" cy="7" r="4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      ),
       title: "User Management",
       description:
         "Role-based access control with Admin and User permissions. Secure user creation and management capabilities.",
-      color: "linear-gradient(135deg, #007bff, #0056b3)",
-      bgColor: "rgba(0, 123, 255, 0.1)"
+      color: "linear-gradient(135deg, #6366f1, #8b5cf6)",
+      bgColor: "rgba(99, 102, 241, 0.1)",
+      accentColor: "#6366f1"
     },
     {
-      icon: "📁",
+      icon: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22 19C22 19.5304 21.7893 20.0391 21.4142 20.4142C21.0391 20.7893 20.5304 21 20 21H4C3.46957 21 2.96086 20.7893 2.58579 20.4142C2.21071 20.0391 2 19.5304 2 19V5C2 4.46957 2.21071 3.96086 2.58579 3.58579C2.96086 3.21071 3.46957 3 4 3H9L11 6H20C20.5304 6 21.0391 6.21071 21.4142 6.58579C21.7893 6.96086 22 7.46957 22 8V19Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      ),
       title: "Document Control",
       description:
         "Upload, download, update, and delete documents with proper ownership controls and global document sharing.",
-      color: "linear-gradient(135deg, #6c757d, #495057)",
-      bgColor: "rgba(108, 117, 125, 0.1)"
+      color: "linear-gradient(135deg, #10b981, #059669)",
+      bgColor: "rgba(16, 185, 129, 0.1)",
+      accentColor: "#10b981"
     },
     {
-      icon: "📝",
+      icon: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 11H15M9 15H15M17 21H7C6.46957 21 5.96086 20.7893 5.58579 20.4142C5.21071 20.0391 5 19.5304 5 19V5C5 4.46957 5.21071 3.96086 5.58579 3.58579C5.96086 3.21071 6.46957 3 7 3H12.586C12.8512 3.00006 13.1055 3.10545 13.293 3.293L18.707 8.707C18.8946 8.89449 18.9999 9.14881 19 9.414V19C19 19.5304 18.7893 20.0391 18.4142 20.4142C18.0391 20.7893 17.5304 21 17 21Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      ),
       title: "Audit Trail",
       description:
         "Complete activity logging with timestamps, and comprehensive audit trails for compliance.",
-      color: "linear-gradient(135deg, #007bff, #20c997)",
-      bgColor: "rgba(0, 123, 255, 0.1)"
+      color: "linear-gradient(135deg, #f59e0b, #d97706)",
+      bgColor: "rgba(245, 158, 11, 0.1)",
+      accentColor: "#f59e0b"
     },
   ];
 
   return (
-    <section className="py-5 bg-white w-100 position-relative overflow-hidden">
+    <section className={`${styles.featuresSection} py-5 w-100 position-relative overflow-hidden`}>
       {/* Background pattern */}
-      <div className="position-absolute top-0 start-0 w-100 h-100 opacity-25">
-        <div className="position-absolute" style={{
-          top: '5%',
-          right: '5%',
-          width: '120px',
-          height: '120px',
-          background: 'linear-gradient(45deg, #f8f9fa, #e9ecef)',
-          borderRadius: '50%',
-          animation: 'float 8s ease-in-out infinite'
-        }}></div>
-        <div className="position-absolute" style={{
-          bottom: '10%',
-          left: '5%',
-          width: '90px',
-          height: '90px',
-          background: 'linear-gradient(45deg, #f8f9fa, #e9ecef)',
-          borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%',
-          animation: 'float 6s ease-in-out infinite reverse'
-        }}></div>
+      <div className={styles.backgroundPattern}>
+        <div className={`${styles.patternElement} ${styles.pattern1}`}></div>
+        <div className={`${styles.patternElement} ${styles.pattern2}`}></div>
+        <div className={`${styles.patternElement} ${styles.pattern3}`}></div>
       </div>
 
       <div className="container text-center position-relative">
-        <div className="mb-5" style={{
-          animation: 'fadeInUp 0.8s ease-out'
-        }}>
-          <h2 className="mb-3" style={{
-            background: 'linear-gradient(45deg, #212529, #495057)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-            fontWeight: '700'
-          }}>
+        <div className={styles.sectionHeader}>
+          <div className={styles.badge}>Features</div>
+          <h2 className={styles.sectionTitle}>
             Comprehensive Document Control
           </h2>
-          <p className="text-muted mb-0" style={{
-            fontSize: '1.1rem',
-            maxWidth: '600px',
-            margin: '0 auto'
-          }}>
-            Everything you need to manage documents securely with role-based access.
+          <p className={styles.sectionSubtitle}>
+            Everything you need to manage documents securely with role-based access and complete audit trails.
           </p>
-          <div className="mx-auto mt-3" style={{
-            width: '100px',
-            height: '4px',
-            background: 'linear-gradient(45deg, #007bff, #0056b3)',
-            borderRadius: '2px'
-          }}></div>
+          <div className={styles.titleAccent}></div>
         </div>
 
         <div className="row justify-content-center">
           {features.map((feature, index) => (
             <div 
-              className="col-md-4 mb-4" 
+              className="col-lg-4 col-md-6 mb-4" 
               key={index}
               style={{
                 animation: `fadeInUp 0.8s ease-out ${0.2 + index * 0.2}s both`
               }}
             >
               <div 
-                className="card h-100 shadow-sm position-relative overflow-hidden"
-                style={{
-                  border: 'none',
-                  borderRadius: '20px',
-                  background: 'linear-gradient(135deg, #ffffff, #f8f9fa)',
-                  transition: 'all 0.3s ease',
-                  transform: 'translateY(0)',
-                  cursor: 'pointer'
-                }}
+                className={`${styles.featureCard} card h-100 position-relative overflow-hidden`}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-10px)';
-                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.15)';
+                  e.currentTarget.style.transform = 'translateY(-15px) scale(1.02)';
+                  e.currentTarget.style.boxShadow = `0 30px 60px ${feature.accentColor}20`;
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
                 }}
               >
-                {/* Card background accent */}
+                {/* Card glow effect */}
                 <div 
-                  className="position-absolute top-0 start-0 w-100" 
-                  style={{
-                    height: '5px',
-                    background: feature.color
-                  }}
+                  className={styles.cardGlow}
+                  style={{ background: feature.color }}
                 ></div>
                 
-                {/* Floating background element */}
+                {/* Floating background accent */}
                 <div 
-                  className="position-absolute"
-                  style={{
-                    top: '20px',
-                    right: '20px',
-                    width: '60px',
-                    height: '60px',
-                    background: feature.bgColor,
-                    borderRadius: '50%',
-                    opacity: '0.3'
-                  }}
+                  className={styles.floatingAccent}
+                  style={{ background: feature.bgColor }}
                 ></div>
 
                 <div className="card-body p-4 position-relative">
-                  <div className="mb-3">
+                  <div className={styles.iconContainer}>
                     <div 
-                      className="d-inline-block p-3 rounded-circle shadow-sm"
-                      style={{
-                        background: feature.color,
-                        transform: 'rotate(0deg)',
-                        transition: 'transform 0.3s ease'
-                      }}
+                      className={styles.iconWrapper}
+                      style={{ background: feature.color }}
                       onMouseEnter={(e) => {
                         e.currentTarget.style.transform = 'rotate(10deg) scale(1.1)';
                       }}
@@ -148,83 +111,65 @@ export default function FeatureCards() {
                         e.currentTarget.style.transform = 'rotate(0deg) scale(1)';
                       }}
                     >
-                      <span className="display-4" style={{
-                        filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.1))'
-                      }}>
+                      <span className={styles.cardIcon}>
                         {feature.icon}
                       </span>
                     </div>
                   </div>
                   
-                  <h5 className="card-title mb-3" style={{
-                    fontWeight: '600',
-                    color: '#212529'
-                  }}>
+                  <h5 className={styles.cardTitle}>
                     {feature.title}
                   </h5>
                   
-                  <p className="card-text text-muted" style={{
-                    lineHeight: '1.6',
-                    fontSize: '0.95rem'
-                  }}>
+                  <p className={styles.cardDescription}>
                     {feature.description}
                   </p>
+
+                  <div className={styles.cardFooter}>
+                    <span 
+                      className={styles.learnMore}
+                      style={{ color: feature.accentColor }}
+                    >
+                      Learn More 
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginLeft: '0.5rem', display: 'inline-block' }}>
+                        <line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <polyline points="12,5 19,12 12,19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </span>
+                  </div>
                 </div>
 
                 {/* Hover shine effect */}
-                <div 
-                  className="position-absolute top-0 start-0 w-100 h-100"
-                  style={{
-                    background: 'linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.2) 50%, transparent 70%)',
-                    transform: 'translateX(-100%)',
-                    transition: 'transform 0.6s ease',
-                    pointerEvents: 'none'
-                  }}
-                ></div>
+                <div className={styles.shineEffect}></div>
               </div>
             </div>
           ))}
         </div>
-      </div>
 
-      <style jsx>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-15px) rotate(5deg); }
-        }
-        
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        .card:hover .position-absolute:last-child {
-          transform: translateX(100%);
-        }
-        
-        .card::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
-          opacity: 0;
-          transition: opacity 0.3s ease;
-          pointer-events: none;
-        }
-        
-        .card:hover::before {
-          opacity: 1;
-        }
-      `}</style>
+        {/* Bottom CTA section */}
+        <div className={styles.ctaSection}>
+          <div className={styles.ctaContent}>
+            <h3 className={styles.ctaTitle}>Ready to get started?</h3>
+            <p className={styles.ctaSubtitle}>
+              Experience the power of professional document management today.
+            </p>
+            <div className={styles.ctaStats}>
+              <div className={styles.stat}>
+                <span className={styles.statNumber}>99.9%</span>
+                <span className={styles.statLabel}>Uptime</span>
+              </div>
+              <div className={styles.stat}>
+                <span className={styles.statNumber}>256-bit</span>
+                <span className={styles.statLabel}>Encryption</span>
+              </div>
+              <div className={styles.stat}>
+                <span className={styles.statNumber}>24/7</span>
+                <span className={styles.statLabel}>Support</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
